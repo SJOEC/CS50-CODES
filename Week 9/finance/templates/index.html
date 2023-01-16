@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+    {% block title %}
+        Portfolio
+    {% endblock %}
+
+{% block main %}
+    <div style="width: 80%; margin: auto auto">
+        <div>
+            {{ hola }}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    <!--{{ foo }}{{ bar }} Print debugger-->
+                </thead>
+                <tbody>
+                    {% for i,j,k in zip(foo,bar,baz) %}
+                        <tr>
+                            <td>{{ i['stock_symbol'] }}</td>
+                            <td>{{  j['name'] }}</td>
+                            <td>{{ i['stock_shares'] }}</td>
+                            <td>{{ j['price'] | usd }}</td>
+                            <td>{{ k | usd }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfooter id="end_index_table" style="background-color: rgb(128,128,128,0.25)">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th style="text-align: center;">Cash</th>
+                        <td>{{ quux | usd }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th>TOTAL</th>
+                        <td>{{ qux | usd }}</td>
+                    </tr>
+                </tfooter>
+
+            </table>
+        </div>
+    </div>
+{% endblock %}

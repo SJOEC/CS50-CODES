@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <div style="padding: 15px padding-top = 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Symbol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ul>
+                    <tr>
+                        <td>{{ stock_data['name'] }}</td>
+                        <td>{{ stock_data['price'] | usd }}</td>
+                        <td>{{ stock_data['symbol'] }}</td>
+                    </tr>
+                </ul>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

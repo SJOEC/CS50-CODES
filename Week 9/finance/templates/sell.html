@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+    {% block title %}
+        Sell
+    {% endblock %}
+
+
+
+{% block main %}
+
+    <div class="container">
+        <form action="/sell" method="post">
+
+            <select name="symbol" id="sell_symbol" style="cursor: pointer">
+                <option disabled selected> Symbol </option>
+                {% for i in foo %}
+                    <option value="{{ i['stock_symbol'] }}"> {{ i['stock_symbol'] }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="numeric" placeholder="shares" name="shares" autocomplete="off" style="display: block; margin: 15px">
+
+            <button class="btn btn-primary" type="submit">Sell</button>
+        </form>
+    </div>
+
+{% endblock %}
